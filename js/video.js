@@ -54,12 +54,13 @@ document.querySelector("#original").addEventListener("click", function(){
 });
 
 document.querySelector("#skip").addEventListener("click", function() {
-	video.currentTime += 5;
-	console.log(video.currentTime);
-	if (video.ended){
-		video.ended = true;
-		video.play();
-		console.log(video.currentTime);
+	if (video.currentTime + 5 > video.duration){
+		video.currentTime = 0;
+		video.play();}
+	else {
+		video.currentTime += 5;
 	}
+	console.log(video.currentTime);
+	
 });
 
