@@ -45,3 +45,21 @@ document.querySelector("#volumeSlider").addEventListener("change", function(){
 	console.log(document.querySelector("#volume").innerHTML);
 });
 
+document.querySelector("#old").addEventListener("click", function(){
+	video.classList.add("oldTime");
+});
+
+document.querySelector("#original").addEventListener("click", function(){
+	video.classList.remove("oldTime");
+});
+
+document.querySelector("#skip").addEventListener("click", function() {
+	video.currentTime += 5;
+	console.log(video.currentTime);
+	if (video.ended){
+		video.ended = true;
+		video.play();
+		console.log(video.currentTime);
+	}
+});
+
